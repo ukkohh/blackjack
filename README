@@ -1,0 +1,47 @@
+Ohjelmaa käyttö tapahtuu valitsemalla yksi ohjelman tarjoamista vaihtoehdoista ja painamalla entteriä.
+Vaihtoehtojen ollessa kirjaimia muista kirjoitaa ne isolla.
+
+Blackjack on korttipeli, jossa pyritään pääsemään mahdollisiman lähelle 21 ilman sen ylittämistä.
+Pelissä on käytössä yksi pakka kortteja ja peli päättyy, kun kortit loppuvat kesken. Tavalisesta poiketen
+Blackjackissä Ässän (A) arvo voi olla joko 1 tai 11, ja kuninkaalisten korttien (J, Q, K) arvo on aina 10.
+Pelin alkaessa jakaja jakaa itselleen ja pelaajalle 2 kortit, jonka jälkeen pelaaja saa nostaa niin monta
+korttia kuin hän haluaa, ja pelaajan saavutettua käsi johon hän on tyytyväinen jakaja nostaa kortteja
+kunnes saavuttaa paremman käden ja voittaa tai ylitää korttiensa arvolla rajan 21 ja häviää. Myös pelaja
+saataa ylitää rajan nostaessaan kortteja jolloin hän häviää. Blackjackissä normaalisti pelaaja näkee vain
+toisen jakajan aloitus korteista korteista, mutta tasoitaakseni peliä päätin paljastaa jakajan koko käden.
+Pelin päätyttyä, mikäli pisteet ovat tasan, voitto menee jakajalle.
+
+Ventti toimii lähes samalla tavoin kuin Blackjack erona vain että korttien arvot vastaavat niiden normaali
+arvoja (J=11, Q=12, K=13) ja ässä (A) voi olla joko 1 tai 14. Normaalisiti ventissä pidetään kortit
+piilossa kunnes pelaaja on tyytyväinen kortteihinsa, mutta lisätäkseni peliin edes hieman taktikointia
+päätin pitää jakajankin käden esillä. Ventissä on myös mahdollista hävitä välittömästi ensimmäisellä
+kahdella kortilla. Tämä on suhteelisen harvinaista, jonka vuoksi peli ei havaitse sitä, mutta
+kieltäytymällä ekstra korttien nostosta peli tarkistaa pisteet ja julistaa voittajan.
+
+
+Itsearviointi
+
+C++ kielenä osoittautui tavallaan odottamaani helpommaksi kuin odotin, siinä mielessä että sen rakenteet
+muistuttivat huomattavasti muita jo ennestään osaamiani kieliä (kuten JavaScript ja PHP), mutta tavallaan
+myös hankalammaksi kuin oletin C++ ollen huomattavasti kone läheisempi kuin muut osaamani kielet.
+
+Projektissa käytin pohjana ProgrammerSought:tista löytämääni esimerkkiä
+(https://www.programmersought.com//article/22945277403/). Esimerkki oli jokseenkin toimiva malli
+Blackjackistä muutamalla kriittisellä ongelmana suurimpana virhe pisteiden laskussa, jossa pelaajan
+pisteet lasketaan jakajalle ja päinvastoin. Tämä kuitenkin vahingossa korjataan pisteiden tarkistuksessa
+toisella virheellä, joka kääntää ne uudelleen. Toinen ongelma alkuperäisessä koodissa pakottaa jakajan
+nostamaan jokaisen kerran kun pelaaja nostaa kortteja. Ensimmäinen ongelma oli helppoa korjata sen
+löytämisen jälkeen ja toisenkin ongelman sai korjattua temppuilemalla. Yleisesti pyrin myös parantelemaan
+koodia kaikkialla, missä se oli mahdollista (omilla taidoillani). Ventin rakentaminen osoittautui
+odotettua hankalammaksi, koska pelin kulku oli niin tiukasti koodatta alkuperäiseen koodiin ja lopulta
+jouduin uhraamaan vain ensimmäisen käsien tarkastuksen kahden ensimmäisen kortin nostamisen jälkeen.
+
+Mikäli aloittaisin projektin alusta pyrkisin mitä todennäköisimmin yksinkertaistamaan sitä mahdollisimman
+paljon, ja yrittäisin enemmän vältellä if-statementejä. Todennäköisesti olisin, joko tehnyt Blackjackistä
+ja Ventistä erilliset kokonaisuudet molempien rakenteiden yksinkertaistamiseksi, tai sen sijaan, että
+rakensin Ventin Blackjackin päälle olisin tehnyt sen toisinpäin, koska Ventti on rakenteeltaan hieman
+Blackjackiä monimutkaisempi. Koittaisin myös etsiä tavan muokata peliä niin että sitä on mahdollista
+jatkaa korttien loppumisen jälkeen.
+
+Koen opintojakson onnistuneeeksi ja jatkan mitä todennäköisimmin C++ opiskelua itsenäisesti tästä
+saadulle pohjalle.
